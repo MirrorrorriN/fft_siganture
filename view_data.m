@@ -21,6 +21,3 @@ function dr=view_data(filename,start,len)
 %     lt=sqrt(ar.^2+br.^2);
 %     ft=20*log10(lr);
 end
-        
-
-
