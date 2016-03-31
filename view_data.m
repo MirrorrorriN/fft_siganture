@@ -1,6 +1,6 @@
 %view data streaming from gnuradio after fft processing
 %the output fr is the power in dB in frequency domain sequence
-%32 bit chars map to one complex
+%32 bit chars map to one float,64 bit chars map to one complex
 function fr=view_data(filename,start,len)  
     if(nargin<1) 
         filename='test_rx.dat';
