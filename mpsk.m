@@ -34,7 +34,3 @@ for i=1:1:subgroup
         hold on;
     end
 end
-
-sort(tag);
-
-%plot(stdp);
