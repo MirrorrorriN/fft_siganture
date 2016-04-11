@@ -1,8 +1,8 @@
 %searching for the feature of wave transfer by mpsk modification
-filename='USRP_04/mpsk_04.dat';
+filename='4_6/USRP_01/mpsk_01.dat';
 start=0*8;  %every 8 bytes represent one complex data
-group=1000;
-subgroup=10;
+group=2000;
+subgroup=100;
 fft_size=4096;   %fft size
 peaknum=3;
 [p fr]=peak_hold(filename,start,group,subgroup,fft_size);
@@ -18,13 +18,14 @@ for i=1:1:subgroup
 end
 
 for i=1:1:subgroup
-    [b,ref]=sort(tag(i,:));
+    [tag(i,:),ref]=sort(tag(i,:));
+    t=big(i,:);
     for j=1:1:peaknum
-        big(i,j)=b(ref(j));
+        big(i,j)=t(ref(j));
     end
 end
 
-figure (2);
+figure (1);
 for i=1:1:subgroup
     std=max(big(i,:));
     for j=1:1:peaknum
@@ -34,5 +35,6 @@ for i=1:1:subgroup
     end
 end
 
-%plot(stdp);
+sort(tag);
 
+%plot(stdp);
